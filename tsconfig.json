@@ -1,0 +1,9 @@
+{
+  "extends": "./base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "rootDir": "./"
+  },
+  "include": ["tests", "tools"],
+  "exclude": ["node_modules"]
+}
