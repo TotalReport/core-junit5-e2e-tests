@@ -4,6 +4,6 @@
     "noEmit": true,
     "rootDir": "./"
   },
-  "include": ["tests", "tools"],
+  "include": ["tests", "tools", "setup"],
   "exclude": ["node_modules"]
 }

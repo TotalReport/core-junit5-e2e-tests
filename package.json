@@ -8,7 +8,7 @@
     "pnpm": ">=9.5.0"
   },
   "scripts": {
-    "test": "mocha './tests/**/*.test.ts'"
+    "test": "mocha --require ./setup/hooks.ts './tests/**/*.test.ts'"
   },
   "mocha": {
     "node-option": [
