@@ -19,7 +19,7 @@ const client = initClient(contract, {
 
 const coreClient = new CoreClient(client);
 
-describe("exception in before each", () => {
+describe("assertion error in before each", () => {
   test("creates correct entities", async () => {
     const javaTestName =
       "com.craftens.totalreport.junit5example.AssertionErrorInBeforeEachTest";

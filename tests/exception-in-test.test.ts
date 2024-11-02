@@ -19,7 +19,7 @@ const client = initClient(contract, {
 
 const coreClient = new CoreClient(client);
 
-describe("exception in before each", () => {
+describe("exception in test", () => {
   test("creates correct entities", async () => {
     const javaTestName =
       "com.craftens.totalreport.junit5example.ExceptionInTestTest";
