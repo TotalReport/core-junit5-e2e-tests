@@ -1,6 +1,8 @@
 import { $, usePowerShell } from "zx";
 
-usePowerShell();
+if (process.platform === "win32") {
+  usePowerShell();
+}
 
 export const $$ = $({
   quiet: true,
