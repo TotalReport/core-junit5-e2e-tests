@@ -105,7 +105,7 @@ describe("assertion error in test", () => {
           ),
           finishedTimestamp: expect.betweenDates(
             beforeEach1?.startedTimestamp!,
-            beforeEach2?.createdTimestamp!
+            test1?.createdTimestamp!
           ),
           statusId: DEFAULT_TEST_STATUSES.SUCCESSFUL.id,
         },
