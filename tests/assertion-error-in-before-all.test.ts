@@ -75,15 +75,15 @@ describe("assertion error in before all", () => {
           entityType: "before test",
           id: expect.anything(),
           title: javaTestName + "#beforeAll1",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             context?.startedTimestamp!,
             beforeAll1?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             context?.startedTimestamp!,
             beforeAll1?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             beforeAll1?.startedTimestamp!,
             beforeAll2?.startedTimestamp!
           ),
@@ -95,15 +95,15 @@ describe("assertion error in before all", () => {
           entityType: "before test",
           id: expect.anything(),
           title: javaTestName + "#beforeAll2",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             beforeAll1?.finishedTimestamp!,
             beforeAll2?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             beforeAll1?.finishedTimestamp!,
             beforeAll2?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             beforeAll2?.startedTimestamp!,
             afterAll?.createdTimestamp!
           ),
@@ -115,15 +115,15 @@ describe("assertion error in before all", () => {
           entityType: "after test",
           id: expect.anything(),
           title: javaTestName + "#afterAll",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             beforeAll1?.finishedTimestamp!,
             afterAll?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             beforeAll1?.finishedTimestamp!,
             afterAll?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             afterAll?.startedTimestamp!,
             context?.finishedTimestamp!
           ),

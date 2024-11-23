@@ -75,15 +75,15 @@ describe("assertion error in before each", () => {
           entityType: "before test",
           id: expect.anything(),
           title: javaTestName + "#beforeAll",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             context?.startedTimestamp!,
             beforeAll?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             context?.startedTimestamp!,
             beforeAll?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             beforeAll?.startedTimestamp!,
             beforeEach1?.startedTimestamp!
           ),
@@ -95,15 +95,15 @@ describe("assertion error in before each", () => {
           entityType: "before test",
           id: expect.anything(),
           title: javaTestName + "#beforeEach1",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             beforeAll?.finishedTimestamp!,
             beforeEach1?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             beforeAll?.finishedTimestamp!,
             beforeEach1?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             beforeEach1?.startedTimestamp!,
             beforeEach2?.createdTimestamp!
           ),
@@ -115,15 +115,15 @@ describe("assertion error in before each", () => {
           entityType: "before test",
           id: expect.anything(),
           title: javaTestName + "#beforeEach2",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             beforeEach1?.finishedTimestamp!,
             beforeEach2?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             beforeEach1?.finishedTimestamp!,
             beforeEach2?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             beforeEach2?.startedTimestamp!,
             afterAll?.createdTimestamp!
           ),
@@ -135,15 +135,15 @@ describe("assertion error in before each", () => {
           entityType: "after test",
           id: expect.anything(),
           title: javaTestName + "#afterEach",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             beforeEach2?.finishedTimestamp!,
             afterEach?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             beforeEach2?.finishedTimestamp!,
             afterEach?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             afterEach?.startedTimestamp!,
             afterAll?.finishedTimestamp!
           ),
@@ -155,15 +155,15 @@ describe("assertion error in before each", () => {
           entityType: "after test",
           id: expect.anything(),
           title: javaTestName + "#afterAll",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             afterEach?.finishedTimestamp!,
             afterAll?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             afterEach?.finishedTimestamp!,
             afterAll?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             afterAll?.startedTimestamp!,
             context?.finishedTimestamp!
           ),

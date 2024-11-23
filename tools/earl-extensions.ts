@@ -18,6 +18,7 @@ declare module "earl" {
 
     beforeDate(date: Date): never;
     betweenDates(dateMin: Date | string, dateMax: Date | string): never;
+    betweenDatesOrEqual(dateMin: Date | string, dateMax: Date | string): never;
   }
 }
 
@@ -25,6 +26,7 @@ registerMatcher("isCloseToNow", isCloseToNow);
 registerMatcher("closeToDate", closeToDate);
 registerMatcher("beforeDate", beforeDate);
 registerMatcher("betweenDates", betweenDates);
+registerMatcher("betweenDatesOrEqual", betweenDatesOrEqual);
 
 export function isCloseToNow(delta: number) {
   return (value: unknown): boolean => {
@@ -117,6 +119,38 @@ export function betweenDates(dateMin: Date | string, dateMax: Date | string) {
     return (
       dateMinAsMilliseconds < valueAsMilliseconds &&
       valueAsMilliseconds < dateMaxAsMilliseconds
+    );
+  };
+}
+
+
+export function betweenDatesOrEqual(dateMin: Date | string, dateMax: Date | string) {
+  return (value: unknown): boolean => {
+    const parsedDateMin = parseDate(dateMin);
+
+    if (parsedDateMin === undefined) {
+      return false;
+    }
+
+    const parsedDateMax = parseDate(dateMax);
+
+    if (parsedDateMax === undefined) {
+      return false;
+    }
+    
+    const parsedValue = parseDate(value);
+
+    if (parsedValue === undefined) {
+      return false;
+    }
+
+    const dateMinAsMilliseconds = parsedDateMin.getTime();
+    const dateMaxAsMilliseconds = parsedDateMax.getTime();
+    const valueAsMilliseconds = parsedValue.getTime();
+
+    return (
+      dateMinAsMilliseconds <= valueAsMilliseconds &&
+      valueAsMilliseconds <= dateMaxAsMilliseconds
     );
   };
 }

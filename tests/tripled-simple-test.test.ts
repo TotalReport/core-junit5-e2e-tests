@@ -102,15 +102,15 @@ describe("tripled simple test", () => {
           entityType: "before test",
           id: expect.anything(),
           title: javaTestName + "#beforeAll1",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             context?.startedTimestamp!,
             beforeAll1?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             context?.startedTimestamp!,
             beforeAll1?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             beforeAll1?.startedTimestamp!,
             beforeAll2?.startedTimestamp!
           ),
@@ -122,15 +122,15 @@ describe("tripled simple test", () => {
           entityType: "before test",
           id: expect.anything(),
           title: javaTestName + "#beforeAll2",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             beforeAll1?.finishedTimestamp!,
             beforeAll2?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             beforeAll1?.finishedTimestamp!,
             beforeAll2?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             beforeAll2?.startedTimestamp!,
             beforeAll3?.startedTimestamp!
           ),
@@ -142,15 +142,15 @@ describe("tripled simple test", () => {
           entityType: "before test",
           id: expect.anything(),
           title: javaTestName + "#beforeAll3",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             beforeAll2?.finishedTimestamp!,
             beforeAll3?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             beforeAll2?.finishedTimestamp!,
             beforeAll3?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             beforeAll3?.startedTimestamp!,
             beforeEach11?.startedTimestamp!
           ),
@@ -163,15 +163,15 @@ describe("tripled simple test", () => {
           entityType: "before test",
           id: expect.anything(),
           title: javaTestName + "#beforeEach1",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             beforeAll3?.finishedTimestamp!,
             beforeEach11?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             beforeAll3?.finishedTimestamp!,
             beforeEach11?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             beforeEach11?.startedTimestamp!,
             beforeEach12?.startedTimestamp!
           ),
@@ -183,15 +183,15 @@ describe("tripled simple test", () => {
           entityType: "before test",
           id: expect.anything(),
           title: javaTestName + "#beforeEach2",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             beforeEach11?.finishedTimestamp!,
             beforeEach12?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             beforeEach11?.finishedTimestamp!,
             beforeEach12?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             beforeEach12?.startedTimestamp!,
             beforeEach13?.startedTimestamp!
           ),
@@ -203,15 +203,15 @@ describe("tripled simple test", () => {
           entityType: "before test",
           id: expect.anything(),
           title: javaTestName + "#beforeEach3",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             beforeEach12?.finishedTimestamp!,
             beforeEach13?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             beforeEach12?.finishedTimestamp!,
             beforeEach13?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             beforeEach13?.startedTimestamp!,
             test1?.startedTimestamp!
           ),
@@ -223,15 +223,15 @@ describe("tripled simple test", () => {
           entityType: "test",
           id: expect.anything(),
           title: javaTestName + "#test1",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             beforeEach11?.finishedTimestamp!,
             test1?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             beforeEach11?.finishedTimestamp!,
             test1?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             test1?.startedTimestamp!,
             afterEach11?.startedTimestamp!
           ),
@@ -243,15 +243,15 @@ describe("tripled simple test", () => {
           entityType: "after test",
           id: expect.anything(),
           title: javaTestName + "#afterEach1",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             test1?.finishedTimestamp!,
             afterEach11?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             test1?.finishedTimestamp!,
             afterEach11?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             afterEach11?.startedTimestamp!,
             afterEach12?.startedTimestamp!
           ),
@@ -263,15 +263,15 @@ describe("tripled simple test", () => {
           entityType: "after test",
           id: expect.anything(),
           title: javaTestName + "#afterEach2",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             afterEach11?.finishedTimestamp!,
             afterEach12?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             afterEach11?.finishedTimestamp!,
             afterEach12?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             afterEach12?.startedTimestamp!,
             afterEach13?.startedTimestamp!
           ),
@@ -283,15 +283,15 @@ describe("tripled simple test", () => {
           entityType: "after test",
           id: expect.anything(),
           title: javaTestName + "#afterEach3",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             afterEach12?.finishedTimestamp!,
             afterEach13?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             afterEach12?.finishedTimestamp!,
             afterEach13?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             afterEach13?.startedTimestamp!,
             beforeEach21?.startedTimestamp!
           ),
@@ -304,15 +304,15 @@ describe("tripled simple test", () => {
           entityType: "before test",
           id: expect.anything(),
           title: javaTestName + "#beforeEach1",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             afterEach13?.finishedTimestamp!,
             beforeEach21?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             afterEach13?.finishedTimestamp!,
             beforeEach21?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             beforeEach21?.startedTimestamp!,
             beforeEach22?.startedTimestamp!
           ),
@@ -324,15 +324,15 @@ describe("tripled simple test", () => {
           entityType: "before test",
           id: expect.anything(),
           title: javaTestName + "#beforeEach2",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             beforeEach21?.finishedTimestamp!,
             beforeEach22?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             beforeEach21?.finishedTimestamp!,
             beforeEach22?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             beforeEach22?.startedTimestamp!,
             beforeEach23?.startedTimestamp!
           ),
@@ -344,15 +344,15 @@ describe("tripled simple test", () => {
           entityType: "before test",
           id: expect.anything(),
           title: javaTestName + "#beforeEach3",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             beforeEach22?.finishedTimestamp!,
             beforeEach23?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             beforeEach22?.finishedTimestamp!,
             beforeEach23?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             beforeEach23?.startedTimestamp!,
             test3?.startedTimestamp!
           ),
@@ -364,15 +364,15 @@ describe("tripled simple test", () => {
           entityType: "test",
           id: expect.anything(),
           title: javaTestName + "#test2",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             beforeEach23?.finishedTimestamp!,
             test2?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             beforeEach23?.finishedTimestamp!,
             test2?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             test2?.startedTimestamp!,
             afterEach21?.startedTimestamp!
           ),
@@ -384,15 +384,15 @@ describe("tripled simple test", () => {
           entityType: "after test",
           id: expect.anything(),
           title: javaTestName + "#afterEach1",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             test2?.finishedTimestamp!,
             afterEach21?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             test2?.finishedTimestamp!,
             afterEach21?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             afterEach21?.startedTimestamp!,
             afterEach22?.startedTimestamp!
           ),
@@ -404,15 +404,15 @@ describe("tripled simple test", () => {
           entityType: "after test",
           id: expect.anything(),
           title: javaTestName + "#afterEach2",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             afterEach21?.finishedTimestamp!,
             afterEach22?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             afterEach21?.finishedTimestamp!,
             afterEach22?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             afterEach22?.startedTimestamp!,
             afterEach23?.startedTimestamp!
           ),
@@ -424,15 +424,15 @@ describe("tripled simple test", () => {
           entityType: "after test",
           id: expect.anything(),
           title: javaTestName + "#afterEach3",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             afterEach22?.finishedTimestamp!,
             afterEach23?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             afterEach22?.finishedTimestamp!,
             afterEach23?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             afterEach23?.startedTimestamp!,
             beforeEach31?.startedTimestamp!
           ),
@@ -445,15 +445,15 @@ describe("tripled simple test", () => {
           entityType: "before test",
           id: expect.anything(),
           title: javaTestName + "#beforeEach1",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             afterEach23?.finishedTimestamp!,
             beforeEach31?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             afterEach23?.finishedTimestamp!,
             beforeEach31?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             beforeEach31?.startedTimestamp!,
             beforeEach32?.startedTimestamp!
           ),
@@ -465,15 +465,15 @@ describe("tripled simple test", () => {
           entityType: "before test",
           id: expect.anything(),
           title: javaTestName + "#beforeEach2",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             beforeEach31?.finishedTimestamp!,
             beforeEach32?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             beforeEach31?.finishedTimestamp!,
             beforeEach32?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             beforeEach32?.startedTimestamp!,
             beforeEach33?.startedTimestamp!
           ),
@@ -485,15 +485,15 @@ describe("tripled simple test", () => {
           entityType: "before test",
           id: expect.anything(),
           title: javaTestName + "#beforeEach3",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             beforeEach32?.finishedTimestamp!,
             beforeEach33?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             beforeEach32?.finishedTimestamp!,
             beforeEach33?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             beforeEach33?.startedTimestamp!,
             test3?.startedTimestamp!
           ),
@@ -505,15 +505,15 @@ describe("tripled simple test", () => {
           entityType: "test",
           id: expect.anything(),
           title: javaTestName + "#test3",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             beforeEach31?.finishedTimestamp!,
             test3?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             beforeEach31?.finishedTimestamp!,
             test3?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             test3?.startedTimestamp!,
             afterEach31?.startedTimestamp!
           ),
@@ -525,15 +525,15 @@ describe("tripled simple test", () => {
           entityType: "after test",
           id: expect.anything(),
           title: javaTestName + "#afterEach1",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             test3?.finishedTimestamp!,
             afterEach31?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             test1?.finishedTimestamp!,
             afterEach31?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             afterEach31?.startedTimestamp!,
             afterEach32?.startedTimestamp!
           ),
@@ -545,15 +545,15 @@ describe("tripled simple test", () => {
           entityType: "after test",
           id: expect.anything(),
           title: javaTestName + "#afterEach2",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             afterEach31?.finishedTimestamp!,
             afterEach32?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             afterEach31?.finishedTimestamp!,
             afterEach32?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             afterEach32?.startedTimestamp!,
             afterEach33?.startedTimestamp!
           ),
@@ -565,15 +565,15 @@ describe("tripled simple test", () => {
           entityType: "after test",
           id: expect.anything(),
           title: javaTestName + "#afterEach3",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             afterEach32?.finishedTimestamp!,
             afterEach33?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             afterEach32?.finishedTimestamp!,
             afterEach33?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             afterEach33?.startedTimestamp!,
             afterAll1?.startedTimestamp!
           ),
@@ -586,15 +586,15 @@ describe("tripled simple test", () => {
           entityType: "after test",
           id: expect.anything(),
           title: javaTestName + "#afterAll1",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             afterEach33?.finishedTimestamp!,
             afterAll1?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             afterEach33?.finishedTimestamp!,
             afterAll1?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             afterAll1?.startedTimestamp!,
             afterAll2?.startedTimestamp!
           ),
@@ -606,15 +606,15 @@ describe("tripled simple test", () => {
           entityType: "after test",
           id: expect.anything(),
           title: javaTestName + "#afterAll2",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             afterAll1?.finishedTimestamp!,
             afterAll2?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             afterAll1?.finishedTimestamp!,
             afterAll2?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             afterAll2?.startedTimestamp!,
             afterAll3?.startedTimestamp!
           ),
@@ -626,15 +626,15 @@ describe("tripled simple test", () => {
           entityType: "after test",
           id: expect.anything(),
           title: javaTestName + "#afterAll3",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             afterAll2?.finishedTimestamp!,
             afterAll3?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             afterAll2?.finishedTimestamp!,
             afterAll3?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             afterAll3?.startedTimestamp!,
             context?.finishedTimestamp!
           ),

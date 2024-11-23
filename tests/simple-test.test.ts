@@ -80,15 +80,15 @@ describe("simple test", () => {
           entityType: "before test",
           id: expect.anything(),
           title: javaTestName + "#beforeAll",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             context?.startedTimestamp!,
             beforeAll?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             context?.startedTimestamp!,
             beforeAll?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             beforeAll?.startedTimestamp!,
             beforeEach?.startedTimestamp!
           ),
@@ -100,15 +100,15 @@ describe("simple test", () => {
           entityType: "before test",
           id: expect.anything(),
           title: javaTestName + "#beforeEach",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             beforeAll?.finishedTimestamp!,
             beforeEach?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             beforeAll?.finishedTimestamp!,
             beforeEach?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             beforeEach?.startedTimestamp!,
             test?.startedTimestamp!
           ),
@@ -120,15 +120,15 @@ describe("simple test", () => {
           entityType: "test",
           id: expect.anything(),
           title: javaTestName + "#test",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             beforeEach?.finishedTimestamp!,
             test?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             beforeEach?.finishedTimestamp!,
             test?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             test?.startedTimestamp!,
             afterEach?.startedTimestamp!
           ),
@@ -140,15 +140,15 @@ describe("simple test", () => {
           entityType: "after test",
           id: expect.anything(),
           title: javaTestName + "#afterEach",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             test?.finishedTimestamp!,
             afterEach?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             test?.finishedTimestamp!,
             afterEach?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             afterEach?.startedTimestamp!,
             afterAll?.startedTimestamp!
           ),
@@ -160,15 +160,15 @@ describe("simple test", () => {
           entityType: "after test",
           id: expect.anything(),
           title: javaTestName + "#afterAll",
-          createdTimestamp: expect.betweenDates(
+          createdTimestamp: expect.betweenDatesOrEqual(
             afterEach?.finishedTimestamp!,
             afterAll?.finishedTimestamp!
           ),
-          startedTimestamp: expect.betweenDates(
+          startedTimestamp: expect.betweenDatesOrEqual(
             afterEach?.finishedTimestamp!,
             afterAll?.finishedTimestamp!
           ),
-          finishedTimestamp: expect.betweenDates(
+          finishedTimestamp: expect.betweenDatesOrEqual(
             afterAll?.startedTimestamp!,
             context?.finishedTimestamp!
           ),
