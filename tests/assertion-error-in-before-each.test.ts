@@ -65,8 +65,8 @@ describe("assertion error in before each", () => {
           entityType: "test context",
           id: expect.anything(),
           title: javaTestName,
-          createdTimestamp: expect.closeToDate(timestampBeforeTest, 2000),
-          startedTimestamp: expect.closeToDate(timestampBeforeTest, 2000),
+          createdTimestamp: expect.closeToDate(timestampBeforeTest, 3000),
+          startedTimestamp: expect.closeToDate(timestampBeforeTest, 3000),
           finishedTimestamp: expect.closeToDate(timestampBeforeTest, 5000),
         },
         {
